@@ -1,2 +1,5 @@
 build/*
 poky/*
+arduino/*
+broadcom_cws/*
+mw/*
