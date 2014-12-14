@@ -239,13 +239,13 @@ COPYLEFT_LICENSE_INCLUDE = 'GPL* LGPL*'
   # Apply patch on top of it allowing to perform build in external source directory
   #echo "Applying patch on it"
   cd $poky_dir
-  git apply --whitespace=nowarn $my_dir/device-software/utils/fix-gcc49-binutils.patch 
-  git apply $my_dir/device-software/utils/0001-kernel-kernel-yocto-fix-external-src-builds-when-S-B-poky-dora.patch
-  git apply $my_dir/device-software/utils/gcc-Clean-up-configure_prepend-and-fix-for-mingw.patch
-  git apply $my_dir/device-software/utils/sdk-populate-clean-broken-links.patch
-  git apply $my_dir/device-software/utils/fix-sshd-varloglastlog-warning.patch
-  git apply --whitespace=nowarn $my_dir/device-software/utils/0001-bash-fix-CVE-2014-6271.patch
-  git apply --whitespace=nowarn $my_dir/device-software/utils/0002-bash-Fix-CVE-2014-7169.patch
+  patch -p1 < $my_dir/device-software/utils/fix-gcc49-binutils.patch
+  patch -p1 < $my_dir/device-software/utils/0001-kernel-kernel-yocto-fix-external-src-builds-when-S-B-poky-dora.patch
+  patch -p1 < $my_dir/device-software/utils/gcc-Clean-up-configure_prepend-and-fix-for-mingw.patch
+  patch -p1 < $my_dir/device-software/utils/sdk-populate-clean-broken-links.patch
+  patch -p1 < $my_dir/device-software/utils/fix-sshd-varloglastlog-warning.patch
+  patch -p1 < $my_dir/device-software/utils/0001-bash-fix-CVE-2014-6271.patch
+  patch -p1 < $my_dir/device-software/utils/0002-bash-Fix-CVE-2014-7169.patch
 
   mingw_dir=$poky_dir/meta-mingw
   echo "Unpacking Mingw layer to poky/meta-mingw/ directory from archive"
